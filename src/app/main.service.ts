@@ -65,6 +65,10 @@ export class MainService {
     }));
   }
 
+  /**
+   * Get the data from the url passed by parameter
+   * @param url
+   */
   getApiData(url) {
     return this.httpClient.get<any[]>(
       url, { observe: 'response' });
