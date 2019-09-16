@@ -1,0 +1,16 @@
+.products-selection__list {
+  list-style: none;
+  padding: 0;
+}
+
+.products-selection__product__info {
+  align-items: center;
+}
+
+.products-selection__product__info__price-was {
+  text-decoration: line-through;
+}
+
+.products-selection__product__info__price-new {
+  color: red;
+}

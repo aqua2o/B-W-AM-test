@@ -1,0 +1,9 @@
+{
+  "name": "The Flowers Team Pick",
+  "id": 7,
+  "price_pennies": 2900,
+  "currency": "GBP",
+  "images": [
+    "https://media.bloomandwild.com/v1/trim:15/320x320/smart/filters:format(webp)/https://assets-0.bloomandwild.com/letterbox-main/the-lily/fdfcc33c-f135-448f-9caf-776a81d1a9d4.jpg"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "The Harper",
+  "id": 1,
+  "price_pennies": 3000,
+  "currency": "GBP",
+  "images": [
+    "https://media.bloomandwild.com/v1/trim:15/320x320/smart/filters:format(webp)/https://assets-0.bloomandwild.com/letterbox-main/the-harper/8c60349e-69b1-4035-8c67-b842d2e2ca37.jpg"
+  ]
+}

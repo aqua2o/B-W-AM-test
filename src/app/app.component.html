@@ -1,0 +1,92 @@
+<div class="container">
+  <h1>Bloom & Wild</h1>
+  <hr />
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 products-selection">
+      <h3>Products</h3>
+      <hr />
+      <ul class="products-selection__list">
+        <li class="mb-2 products-selection__product" *ngFor="let product of products">
+          <div class="row">
+            <div class="col-4">
+              <div *ngFor="let image of product.images"> 
+                <!-- carousel if more than one image? -->
+                <img class="img-fluid" src="{{ image }}" alt="">
+              </div>
+            </div>
+            <div class="col-8 d-flex justify-content-between products-selection__product__info">
+              <div>
+                <span class="mr-2">{{ product.name }}</span>
+                <div *ngIf="basket.length < 1">
+                  <span class="mr-2 products-selection__product__info__price">{{ product.currency | replaceCurrencySymbol }}{{ product.price_pennies/100 }}
+                  </span>
+                </div>
+                <div *ngIf="basket.length >= 1">
+                  <span class="mr-2 products-selection__product__info__price products-selection__product__info__price-was">{{ product.currency | replaceCurrencySymbol }}{{ (product.price_pennies)/100 }}</span>
+                  <span class="mr-2 products-selection__product__info__price products-selection__product__info__price-new">{{ product.currency | replaceCurrencySymbol }}{{ (product.price_pennies-500)/100 }}</span>
+                </div>
+              </div>
+              <button (click)="addToBasket(product)" class="btn btn-dark btn-sm"><strong>+</strong></button>
+            </div>
+          </div>
+          <hr />
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-lg-4">
+      <h3>Your Order:</h3>
+      <hr />
+      <ul class="list-group">
+        <li class="mb-2 list-group-item" *ngFor="let product of basketData">
+          <div class="row">
+            <div class="col-8">
+              <span>{{product.quantity}} x {{ product.name }} =
+                {{ product.currency | replaceCurrencySymbol }}{{product.subtotal/100}}</span>
+            </div>
+            <div class="col-4 text-right">
+              <button href="#" (click)="removeFromBasket(product, false)" class="btn btn-warning btn-sm mr-2"><strong>-</strong></button>
+              <button href="#" (click)="removeFromBasket(product, true)" class="btn btn-danger btn-sm"><strong>x</strong></button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div *ngIf="total !== 0">
+        <div class="card mb-2">
+          <div class="card-body d-flex justify-content-between">
+            <strong>Total:</strong> 
+            <span><strong>{{ totalToDisplay | replaceCurrencySymbol}}</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" *ngIf="basket && basket.length">
+        <div class="card-header">
+          Submit your order
+        </div>
+        <div class="card-body">
+          <form [formGroup]="placeOrderForm" novalidate (ngSubmit)="submitForm()">
+            <div class="form-group">
+              <label for="emailAddress">Email address</label>
+              <input type="text" formControlName="emailaddress" class="form-control" id="emailAddress" placeholder="Enter email" [ngClass]="{ 'is-invalid': f.emailaddress.touched && f.emailaddress.errors }"/>
+              <div *ngIf="f.emailaddress.touched && f.emailaddress.errors">
+                <div *ngIf="f.emailaddress.errors.required" class="text-danger">email address is required</div>
+                <div *ngIf="f.emailaddress.errors.email" class="text-danger">Please enter a valid email address</div>
+                <div *ngIf="f.emailaddress.errors.pattern" class="text-danger">Only email addresses that end in @bloomandwild.com, @bloomandwild.de or @bloomandwild.fr are valid</div>
+              </div>
+            </div>
+            <button class="btn btn-dark btn-block">
+              Submit
+            </button>
+          </form>
+          <div *ngIf="submitted" class="alert alert-success mt-3" role="alert">
+              Order placed!
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

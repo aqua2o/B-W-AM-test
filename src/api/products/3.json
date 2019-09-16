@@ -1,0 +1,9 @@
+{
+  "name": "The Clemmie",
+  "id": 3,
+  "price_pennies": 2700,
+  "currency": "GBP",
+  "images": [
+    "https://media.bloomandwild.com/v1/trim:15/320x320/smart/filters:format(webp)/https://assets-0.bloomandwild.com/letterbox-main/the-clemmie/3bf11441-3926-4468-8af6-03a1d50797d5.jpg"
+  ]
+}

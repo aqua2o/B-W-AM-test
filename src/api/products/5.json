@@ -1,0 +1,9 @@
+{
+  "name": "The Hazel",
+  "id": 5,
+  "price_pennies": 3800,
+  "currency": "GBP",
+  "images": [
+    "https://media.bloomandwild.com/v1/trim:15/320x320/smart/filters:format(webp)/https://assets-0.bloomandwild.com/letterbox-main/the-hazel/a3d4c278-2334-4e71-aa4a-7f52aa9c0635.jpg"
+  ]
+}

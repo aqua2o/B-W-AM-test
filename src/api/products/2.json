@@ -1,0 +1,9 @@
+{
+  "name": "The Bramble",
+  "id": 2,
+  "price_pennies": 3500,
+  "currency": "GBP",
+  "images": [
+    "https://media.bloomandwild.com/v1/trim:15/320x320/smart/filters:format(webp)/https://assets-0.bloomandwild.com/letterbox-main/the-bramble/c2e11eb2-7a80-41d7-9adf-0b4d7bd04135.jpg"
+  ]
+}
